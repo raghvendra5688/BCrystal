@@ -43,11 +43,11 @@ This step will install all the dependencies required for running BCrystal. You d
 
 DISOPRED and SCRATCH-1D_1.2 should be in the same directory as Data folder. Data folder has the training and the 3 test set proteins in fasta format as well as files corresponding to their true labels - crystallized (1) or not (0).
 
-# Run BCrsytal on New Test file
+# Run BCrystal on New Test file
 
 To run BCrystal on your own protein sequences you need the following three things:
 
-  1. Protein Sequence File: Protein sequence/sequences of interest in fasta format (https://en.wikipedia.org/wiki/FASTA_format). We provide `data/Seq_solo.fasta` as an example 
+  1. Protein Sequence File: Protein sequence/sequences of interest in fasta format (https://en.wikipedia.org/wiki/FASTA_format). We provide `Data/test.fasta` as sample test file. 
   2. SCRATCH: Software used to extract structural features from a given protein sequence file. Follow instructions in the previous section to install SCRATCH.
   3. DISOPRED: Software used to extract disorder features from a given protein sequence file. Follow instructions in the previosu section to install DISOPRED.
   
