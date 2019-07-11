@@ -58,7 +58,8 @@ To run BCrystal on your own protein sequences you need the following three thing
   2. `python xgb.py features.csv <your-test>.fasta <output_folder>`
   
   
-## In the <output_folder> you will find 2 outputs
+In the <output_folder> you will find 2 outputs:
+
   1. prediction.csv - Containing the crystallization propensity
   2. bar_plot_i.png - where i=1 if a solo sequence is passed in fasta otherwise its the nth sequence in the test fasta file.
   
