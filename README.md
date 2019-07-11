@@ -33,7 +33,7 @@ This step will install all the dependencies required for running BCrystal. You d
     3. Run `cd SCRATCH-1D_1.2`
     4. Run `perl install.pl`
     5. Run `cd ..`
-    6. Replace the blast in `SCRATCH-1D_1.2/pkg/blast-2.2.26` with a 64 bit version of `blast-2.2.26` if you are running on a 64 bit machine (`ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.26/`).
+    6. Replace the blast in `SCRATCH-1D_1.2/pkg/blast-2.2.26` with a 64 bit version of `blast-2.2.26` if you are running on a 64 bit machine (`ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/`).
     
   - DISOPRED (version 3.16) (http://bioinfadmin.cs.ucl.ac.uk/downloads/DISOPRED/)
     1. Run `wget http://bioinfadmin.cs.ucl.ac.uk/downloads/DISOPRED/DISOPRED3.16.tar.gz`
