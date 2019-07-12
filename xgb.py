@@ -1,5 +1,6 @@
+#Code to run for testing on new protein sequences
+
 import matplotlib as mpl
-#mpl.use('Agg')
 import matplotlib.pyplot as plt
 from xgboost import XGBClassifier
 import xgboost as xgb
@@ -37,6 +38,7 @@ with args.file1 as file:
             else:
                 break
 
+#Get and Manipulate Sequences
 x = []
 for row in csv_reader:
     x.append(row)
@@ -55,7 +57,7 @@ X_test.append(X1)
 for i in range(len(X_test1)):
     X_test.append(np.array(X_test1[i]).tolist())
 
-
+#Add feature name information on test set
 df = pd.DataFrame(X_test)
 df.to_csv("Metadata_Test.csv", header=False)
 df = pd.read_csv('Metadata_Test.csv')
@@ -68,6 +70,7 @@ X_test1 = X_test2
 X_test2 = np.array(X_test2)
 dtest = xgb.DMatrix(X_test2)
 
+#Run the model on new test set
 bs = xgb.Booster({'nthread': 4})  # init model
 bs.load_model('xgb_cross_best_score_15_less90.model')  # load data
 yprob = bs.predict(dtest)
@@ -79,11 +82,14 @@ for i in range(len(yprob)):
 out_directory = 'mkdir '+args.directory
 if os.path.exists(args.directory) is False:
 	os.system(out_directory)
-
+	
+#Output the results in <output-dir>/prediction.csv file
 with open(args.directory+'/prediction.csv', 'w') as f:
     write = csv.writer(f)
     write.writerows(zip(Seq_id, yprob))
 f.close()
+
+#Plot the top 10 features driving crystallization propensity for each protein in test file
 colors = ["#7fffd4","#ff0000"]
 for i in range(0, (len(Seq_id))):
     data_for_prediction = X_test1.iloc[[i]]
@@ -136,6 +142,6 @@ for i in range(0, (len(Seq_id))):
     plt.xlabel("SHAP Values")
     plt.title('Top Features for: '+Seq_id[i]+', score = '+str(yprob[i]))
     plt.savefig(args.directory+'/bar_plot_'+str(i+1)+'.png', bbox_inches='tight')
-
+	
 os.system('rm Metadata_Test.csv')
 print("DONE")
