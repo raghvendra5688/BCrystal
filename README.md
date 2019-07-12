@@ -72,6 +72,6 @@ To run BCrystal for training xgboost model on our training proteins, you need to
 
 ### Execute in the command line
   1. `Rscript --vanilla features_PaRSnIP_v2.R Data/Train/FULL_Train.fasta`
-  2. `python xgb_train.py features.csv`
+  2. `python xgb_train.py`
 
 Your output will be a file called `train.model`
