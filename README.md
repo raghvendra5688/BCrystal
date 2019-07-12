@@ -40,6 +40,8 @@ This step will install all the dependencies required for running BCrystal. You d
     2. Run `tar -xvzf DISOPRED3.16.tar.gz`
     3. Run `cd DISOPRED/src/`
     4. Run `make clean; make; make install`
+    5. In `run_disopred.pl` file within the DISOPRED folder change `my $NCBI_DIR = <path-to-SCRATCH-folder>/pkg/blast-2.2.26/bin`
+    6. In `run_disopred.pl` file also change `my $SEQ_DB = <path-to-SCRATCH-folder>/pkg/PROFILpro_1.2/data/uniref50/uniref50`.
 
 DISOPRED and SCRATCH-1D_1.2 should be in the same directory as Data folder. Data folder has the training and the 3 test set proteins in fasta format as well as files corresponding to their true labels - crystallized (1) or not (0).
 
