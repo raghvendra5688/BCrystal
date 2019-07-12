@@ -64,4 +64,14 @@ In the <output_folder> you will find 2 outputs:
 
   1. prediction.csv - Containing the crystallization propensity
   2. bar_plot_i.png - where i=1 if a solo sequence is passed in fasta otherwise its the nth sequence in the test fasta file.
-  
+
+
+# Run BCrystal in Train Mode
+
+To run BCrystal for training xgboost model on our training proteins, you need to do the following:
+
+### Execute in the command line
+  1. `Rscript --vanilla features_PaRSnIP_v2.R Data/Train/FULL_Train.fasta`
+  2. `python xgb_train.py features.csv`
+
+Your output will be a file called `train.model`
